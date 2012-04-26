@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true" >
+
+    <TextView
+        android:id="@+id/rng_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="@string/default_rng_text"
+        android:textSize="48dp" />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rng_display"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/lower" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/upper" />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/lowerbound_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusDown="@+id/upperbound_edittext"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:text="@string/lower_hint" />
+
+            <EditText
+                android:id="@+id/upperbound_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:padding="16dp"
+                android:text="@string/upper_hint" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/table"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="@string/generate" />
+
+</RelativeLayout>
