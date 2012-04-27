@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, RandomNumberGeneratorActivity!</string>
-    <string name="app_name">RandomNumberGenerator</string>
+    <string name="app_name">Random Number Generator</string>
     <string name="lower_hint">0</string>
     <string name="upper_hint">6</string>
     <string name="lower">Lower Bound</string>
