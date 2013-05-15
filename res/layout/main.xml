@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:padding="16dp"
         android:text="@string/default_rng_text"
-        android:textSize="48dp" />
+        android:textSize="48sp" />
 
     <TableLayout
         android:id="@+id/table"
@@ -51,6 +51,7 @@
                 android:nextFocusDown="@+id/upperbound_edittext"
                 android:padding="16dp"
                 android:singleLine="true"
+                android:maxLength="9"
                 android:text="@string/lower_hint" />
 
             <EditText
@@ -59,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:padding="16dp"
+                android:maxLength="9"
                 android:text="@string/upper_hint" />
         </TableRow>
     </TableLayout>
