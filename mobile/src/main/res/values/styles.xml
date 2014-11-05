@@ -1,13 +1,13 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="colorAccent">@color/accent</item>
     </style>
 
-    <style name="TextAppearance.YourApp.FloatLabel" parent="android:TextAppearance.Small">
+    <style name="TextAppearance.FloatLabel" parent="android:TextAppearance.Small">
         <item name="android:textColor">@drawable/float_label</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 </resources>

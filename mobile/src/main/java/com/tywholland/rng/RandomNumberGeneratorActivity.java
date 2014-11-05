@@ -4,15 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.Random;
 
@@ -38,9 +39,7 @@ public class RandomNumberGeneratorActivity extends Activity {
                 if (hasFocus) {
                     mLowerBound.setText("", TextView.BufferType.EDITABLE);
                     inputStatus.showSoftInput(v, InputMethodManager.SHOW_IMPLICIT);
-                }
-                else
-                {
+                } else {
                     inputStatus.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
@@ -54,9 +53,7 @@ public class RandomNumberGeneratorActivity extends Activity {
                 if (hasFocus) {
                     mUpperBound.setText("", TextView.BufferType.EDITABLE);
                     inputStatus.showSoftInput(v, InputMethodManager.SHOW_IMPLICIT);
-                }
-                else
-                {
+                } else {
                     inputStatus.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 }
             }
@@ -81,7 +78,7 @@ public class RandomNumberGeneratorActivity extends Activity {
         mDisplay = (TextView) findViewById(R.id.rng_display);
         // Add onclick listener to button to make it display a new random
         // number, and clear focus of bound edittexts
-        final Button button = (Button) findViewById(R.id.generate_button);
+        final FloatingActionButton button = (FloatingActionButton) findViewById(R.id.generate_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +133,6 @@ public class RandomNumberGeneratorActivity extends Activity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(LOWER_BOUND, mLowerBound.getText().toString());
         editor.putString(UPPER_BOUND, mUpperBound.getText().toString());
-        editor.commit();
+        editor.apply();
     }
 }

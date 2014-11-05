@@ -3,8 +3,8 @@
     <string name="app_name">Random Number Generator</string>
     <string name="lower_hint">0</string>
     <string name="upper_hint">6</string>
-    <string name="lower">Lower Bound</string>
-    <string name="upper">Upper Bound</string>
+    <string name="lower">Low</string>
+    <string name="upper">High</string>
     <string name="default_rng_text">\?</string>
     <string name="generate">Generate</string>
 </resources>
