@@ -1,6 +1,7 @@
 <resources>
     <dimen name="bound_text_size">36sp</dimen>
     <dimen name="generated_number_text_size">80dp</dimen>
+    <dimen name="generated_number_layout_height">180dp</dimen>
 
     <!--FAB Stuff-->
     <dimen name="floating_action_button_size_normal">56dp</dimen>

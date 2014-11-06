@@ -9,22 +9,17 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
 
-    <TextView
+    <TextSwitcher
         android:background="@color/primary"
         android:id="@+id/rng_display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/generated_number_layout_height"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:paddingTop="24dp"
         android:paddingRight="24dp"
         android:paddingLeft="24dp"
-        android:paddingBottom="@dimen/floating_action_button_size_normal"
         android:gravity="center"
-        android:elevation="4dp"
-        android:textColor="#FFFFFF"
-        android:text="@string/default_rng_text"
-        android:textSize="@dimen/generated_number_text_size" />
+        android:elevation="4dp" />
 
     <com.melnykov.fab.FloatingActionButton
         android:id="@+id/generate_button"

@@ -5,13 +5,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.melnykov.fab.FloatingActionButton;
 
@@ -24,7 +26,7 @@ public class RandomNumberGeneratorActivity extends Activity {
     private static final String UPPER_BOUND = "upperbound";
     private EditText mLowerBound;
     private EditText mUpperBound;
-    private TextView mDisplay;
+    private TextSwitcher mDisplay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,7 +77,18 @@ public class RandomNumberGeneratorActivity extends Activity {
             }
         });
         // Set display textview variable
-        mDisplay = (TextView) findViewById(R.id.rng_display);
+        mDisplay = (TextSwitcher) findViewById(R.id.rng_display);
+        mDisplay.setFactory(new TextSwitcher.ViewFactory() {
+            @Override
+            public View makeView() {
+                return LayoutInflater.from(getBaseContext()).inflate(R.layout.generated_number_text, mDisplay, false);
+            }
+        });
+
+        //Set animations
+        mDisplay.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up_in));
+        mDisplay.setOutAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up_out));
+
         // Add onclick listener to button to make it display a new random
         // number, and clear focus of bound edittexts
         final FloatingActionButton button = (FloatingActionButton) findViewById(R.id.generate_button);
